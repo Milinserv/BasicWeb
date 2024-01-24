@@ -1,24 +1,27 @@
 <?php
-// Инициализируем сессию
-session_start();
-
 // Глобальный доступ подключение в БД
 function pdo(): PDO
 {
     static $pdo;
 
     if (!$pdo) {
-        $config = include __DIR__.'/config.php';
-        // Подключение к БД
-        $dsn = 'mysql:dbname='.$config['db_name'].';host='.$config['db_host'];
-        $pdo = new PDO($dsn, $config['db_user'], $config['db_pass']);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try {
+            $config = include __DIR__ . '/config.php';
+            // Подключение к БД
+            $dsn = 'mysql:dbname=' . $config['db_name'] . ';host=' . $config['db_host'];
+            $pdo = new PDO($dsn, $config['db_user'], $config['db_pass']);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            var_dump('Подключение не удалось: ' . $e->getMessage());
+            die();
+        }
     }
 
     return $pdo;
 }
+
 //Проверяем авторизован ли пользователь
 function check_auth(): bool
 {
-    return !!($_SESSION['user_id'] ?? false);
+    return $_COOKIE['PHPSESSID'] ?? false;
 }
