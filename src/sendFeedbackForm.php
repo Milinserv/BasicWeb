@@ -12,8 +12,8 @@ $stmt = pdo()->prepare("
 ");
 
 $stmt->execute([
-    'text' => $_POST['text'],
-    'longtext' => $_POST['longtext'],
+    'text' => $_POST[htmlspecialchars('text')],
+    'longtext' => $_POST[htmlspecialchars('longtext')],
     'active_radio' => $_POST['active_radio'],
     'checkboxes' => $_POST['checkboxes'],
     'select_list' => $_POST['select_list'],
