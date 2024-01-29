@@ -40,13 +40,13 @@
         <div class="form-group mb-3">
             <label for="exampleFormControlTextarea1">Флажки</label>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="checkboxes" value="Default">
+                <input class="form-check-input" type="checkbox" name="checkboxes[default]" value="default">
                 <label class="form-check-label" for="flexCheckDefault">
                     Default checkbox
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="checkboxes" value="Checked">
+                <input class="form-check-input" type="checkbox" name="checkboxes[checked]" value="checked">
                 <label class="form-check-label" for="flexCheckChecked">
                     Checked checkbox
                 </label>

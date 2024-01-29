@@ -15,7 +15,7 @@ $stmt->execute([
     'text' => $_POST[htmlspecialchars('text')],
     'largeAmountText' => $_POST[htmlspecialchars('largeAmountText')],
     'active_radio' => $_POST['active_radio'],
-    'checkboxes' => $_POST['checkboxes'],
+    'checkboxes' => implode(', ', $_POST['checkboxes']),
     'select_list' => $_POST['select_list'],
 ]);
 
