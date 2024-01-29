@@ -20,7 +20,7 @@
         </div>
         <div class="form-group mb-3">
             <label for="exampleFormControlTextarea1">Многострочное текстовое поле</label>
-            <textarea class="form-control" name="largeAmountText" rows="3"></textarea>
+            <textarea class="form-control" name="large_amount_text" rows="3"></textarea>
         </div>
         <div class="form-group mb-3">
             <label for="exampleFormControlTextarea1">Радиокнопки</label>

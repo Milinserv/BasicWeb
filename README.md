@@ -27,7 +27,7 @@ cd BasicWeb
 - Таблица feedback:
 1) user_id - id пользователя который отправил форму.
 2) text - текстовое поле.
-3) largeAmountText - многострочное текстовое поле.
+3) large_amount_text - многострочное текстовое поле.
 4) active_radio - радиокнопки.
 5) checkboxes - флажки.
 6) select_list - выпадающие списки. 
