@@ -7,13 +7,13 @@ session_start();
 $user_id = $_SESSION["user_id"];
 
 $stmt = pdo()->prepare("
-    INSERT INTO feedback (`user_id`,`text`, `longtext`, `active_radio`, `checkboxes`, `select_list`)
-    VALUES ($user_id, :text, :longtext, :active_radio, :checkboxes, :select_list)
+    INSERT INTO feedback (`user_id`,`text`, `largeAmountText`, `active_radio`, `checkboxes`, `select_list`)
+    VALUES ($user_id, :text, :largeAmountText, :active_radio, :checkboxes, :select_list)
 ");
 
 $stmt->execute([
     'text' => $_POST[htmlspecialchars('text')],
-    'longtext' => $_POST[htmlspecialchars('longtext')],
+    'largeAmountText' => $_POST[htmlspecialchars('largeAmountText')],
     'active_radio' => $_POST['active_radio'],
     'checkboxes' => $_POST['checkboxes'],
     'select_list' => $_POST['select_list'],
